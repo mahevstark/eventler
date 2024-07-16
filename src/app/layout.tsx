@@ -4,6 +4,7 @@ import "./globals.css";
 import '@radix-ui/themes/styles.css';
 import { Flex, Theme, Link, Box, Grid } from '@radix-ui/themes';
 import Sidebar from "./components/layout/sidebar/page";
+import Header from "@/app/components/layout/header/page";
 
 
 
@@ -28,14 +29,17 @@ export default function RootLayout({
       <body className={interRegular.className}>
 
         <Theme>
-          <Grid columns={"2"}>
-            <Box width={"30%"}>
-              <Sidebar />
-            </Box>
-            <Box width={"70%"}>
-              {children}
-            </Box>
-          </Grid>
+          <Flex direction={"column"}>
+            <Header />
+            <Grid columns={"2"}>
+              <Box width={"30%"}>
+                <Sidebar />
+              </Box>
+              <Box width={"70%"}>
+                {children}
+              </Box>
+            </Grid>
+          </Flex>
         </Theme>
       </body>
     </html>

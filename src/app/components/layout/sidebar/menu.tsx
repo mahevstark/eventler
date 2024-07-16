@@ -41,23 +41,23 @@ const menuItems = [
     },
     {
         name:"Settings",
-        link:"/under-development",
+        link:"/settings",
         icon: (color:string)=> <FaGear style={{color: color || Colors.menuDark}} />,
         menus:[
             {
                 name: "General",
                 active: false,
-                link:"/under-development",
+                link:"/settings/general",
             },
             {
                 name: "Profile",
                 active: false,
-                link:"/under-development",
+                link:"/settings/profile",
             },
             {
                 name: "Language",
                 active: false,
-                link:"/under-development",
+                link:"/settings/language",
             },
         ],
         active: false,
@@ -71,13 +71,13 @@ const menuItems = [
         name: "Logout",
         icon: (color:string)=> <IoMdLogOut style={{color: color || Colors.menuDark}} />,
         active: false,
-        link:"/under-development",
+        link:"/logout",
     },
     {
         name: "Support",
         icon: (color:string)=> <HiOutlineSupport style={{color: color || Colors.menuDark}} />,
         active: false,
-        link:"/under-development",
+        link:"/support",
     },
     
 ]
