@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import '@radix-ui/themes/styles.css';
+import { Flex, Theme, Link, Box, Grid } from '@radix-ui/themes';
+import Sidebar from "./components/layout/sidebar/page";
 
-const inter = Inter({ subsets: ["latin"] });
+
+
+const interLight = Poppins({weight: "300", style: "normal", subsets: ["latin"]});
+const interRegular = Poppins({weight: "400", style: "normal", subsets: ["latin"]});
+const interMedium = Poppins({weight: "500", style: "normal", subsets: ["latin"]});
+const interSemiBold = Poppins({weight: "600", style: "normal", subsets: ["latin"]});
+const interBold = Poppins({weight: "700", style: "normal", subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={interRegular.className}>
+
+        <Theme>
+          <Grid columns={"2"}>
+            <Box width={"30%"}>
+              <Sidebar />
+            </Box>
+            <Box width={"70%"}>
+              {children}
+            </Box>
+          </Grid>
+        </Theme>
+      </body>
     </html>
   );
 }
